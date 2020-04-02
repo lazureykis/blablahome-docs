@@ -48,11 +48,8 @@ paths:
                     type: string
                     enum:
                       - ok
-                      - error
                   user:
                     $ref: '#/components/schemas/User'
-                  error:
-                    type: string
                 required:
                   - status
               examples:
@@ -62,6 +59,23 @@ paths:
                     user:
                       id: '82317456129'
                       name: Ivan
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - error
+                  error:
+                    type: string
+                required:
+                  - status
+                  - error
+              examples:
                 error:
                   value:
                     status: error
