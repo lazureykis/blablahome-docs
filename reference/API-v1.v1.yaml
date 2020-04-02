@@ -89,6 +89,53 @@ paths:
                 access_token:
                   type: string
       description: User registration
+  /ideas:
+    post:
+      summary: Ideas
+      operationId: post-ideas
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Idea'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: object
+              examples:
+                without a name and description:
+                  value:
+                    errors:
+                      description:
+                        - "can't be blank"
+                      name:
+                        - "can't be blank"
+      security:
+        - Bearer authorization: []
+      description: Creates new idea
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                cover:
+                  type: string
+              required:
+                - name
+                - description
+        description: Use http uploaded file for cover attribute.
 components:
   schemas:
     User:
@@ -99,3 +146,28 @@ components:
           type: string
         name:
           type: string
+    Idea:
+      title: Idea
+      type: object
+      x-examples:
+        example:
+          id: '12357'
+          name: Do something
+          description: Multiline description
+          cover: 'https://cover.image/url.jpg'
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        cover:
+          type: string
+      description: ''
+  securitySchemes:
+    Bearer authorization:
+      name: Authorization
+      type: apiKey
+      in: header
+      description: Used for protected endpoints
