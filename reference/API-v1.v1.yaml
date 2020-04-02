@@ -32,5 +32,56 @@ paths:
       description: Healthcheck endpoint
       requestBody:
         description: ''
+  /users:
+    post:
+      summary: Users
+      operationId: post-users
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - ok
+                      - error
+                  user:
+                    $ref: '#/components/schemas/User'
+                  error:
+                    type: string
+                required:
+                  - status
+              examples:
+                valid user:
+                  value:
+                    status: ok
+                    user:
+                      name: Ivan
+                    auth_token: '123456'
+                error:
+                  value:
+                    status: error
+                    error: Some error reason
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                access_token:
+                  type: string
+      description: User registration
 components:
-  schemas: {}
+  schemas:
+    User:
+      title: User
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
