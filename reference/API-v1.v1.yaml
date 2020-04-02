@@ -136,6 +136,19 @@ paths:
                 - name
                 - description
         description: Use http uploaded file for cover attribute.
+    get:
+      summary: ''
+      operationId: get-ideas
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Idea'
+      description: List ideas
 components:
   schemas:
     User:
