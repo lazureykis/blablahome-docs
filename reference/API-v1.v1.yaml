@@ -60,8 +60,8 @@ paths:
                   value:
                     status: ok
                     user:
+                      id: '82317456129'
                       name: Ivan
-                    auth_token: '123456'
                 error:
                   value:
                     status: error
