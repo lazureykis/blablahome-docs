@@ -7,6 +7,22 @@ servers:
     description: prod
   - url: 'http://localhost:4000/api'
     description: dev
-paths: {}
+paths:
+  /status:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-status
+      description: Healthcheck endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+        description: ''
 components:
   schemas: {}
