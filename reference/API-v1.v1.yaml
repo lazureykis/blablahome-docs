@@ -31,10 +31,6 @@ paths:
       operationId: get-status
       description: Healthcheck endpoint
       requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
         description: ''
 components:
   schemas: {}
