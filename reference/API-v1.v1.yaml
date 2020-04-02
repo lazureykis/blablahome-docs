@@ -100,6 +100,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Idea'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  error:
+                    type: string
+              examples:
+                example-1:
+                  value:
+                    error: unauthorized
+                    status: error
         '422':
           description: Unprocessable Entity
           content:
