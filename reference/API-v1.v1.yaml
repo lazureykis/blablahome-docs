@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: API v1
   version: '1.0'
-  description: Checks server status
+  description: blablahome API
 servers:
   - url: 'https://blablahome.lazureykis.dev/api'
     description: prod
@@ -11,7 +11,7 @@ servers:
 paths:
   /status:
     get:
-      summary: Your GET endpoint
+      summary: Server Status
       tags: []
       responses: {}
       operationId: get-status
