@@ -346,7 +346,7 @@ components:
           maximum: 7
         user:
           $ref: '#/components/schemas/User'
-        parrticipants_count:
+        participants_count:
           type: integer
           minimum: 0
         completions_count:
