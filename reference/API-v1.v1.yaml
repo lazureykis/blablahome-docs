@@ -304,6 +304,65 @@ paths:
         name: user_id
         in: path
         required: true
+  '/activities/{activity_id}/checkin':
+    parameters:
+      - schema:
+          type: string
+        name: activity_id
+        in: path
+        required: true
+    post:
+      summary: Create check-in
+      operationId: post-activities-activity_id-checkin
+      responses:
+        '200':
+          description: OK
+      security:
+        - Bearer authorization: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                photo:
+                  type: string
+                  description: URL
+                participation:
+                  $ref: '#/components/schemas/Participation'
+              required:
+                - photo
+                - participation
+                - photo
+            examples:
+              example-1:
+                value:
+                  likes: 0
+                  message: hello
+                  participation:
+                    id: 36f8cd13-92c5-451b-ae8e-292cec76edc8
+                    progress: 0
+                    completed_at: null
+                    user:
+                      id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                      name: Pavel Lazureykis
+                    activity:
+                      completions_count: 0
+                      cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
+                      days: 7
+                      description: Testing
+                      fails_count: 0
+                      id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
+                      name: Test
+                      participants_count: 2
+                      user:
+                        id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                        name: Pavel Lazureykis
+                  photo: 'https://storage.googleapis.com/blablahome/uploads/0.jpeg?v=63753145943'
+                  progress: 1
+        description: ''
 components:
   schemas:
     User:
