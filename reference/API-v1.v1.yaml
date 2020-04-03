@@ -346,6 +346,15 @@ components:
           maximum: 7
         user:
           $ref: '#/components/schemas/User'
+        parrticipants_count:
+          type: integer
+          minimum: 0
+        completions_count:
+          type: integer
+          minimum: 0
+        fails_count:
+          type: integer
+          minimum: 0
     Participation:
       title: Participation
       type: object
