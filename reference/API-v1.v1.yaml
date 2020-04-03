@@ -91,7 +91,7 @@ paths:
       description: User registration
   /activities:
     post:
-      summary: Ideas
+      summary: Create new activity
       operationId: post-activities
       responses:
         '201':
@@ -135,7 +135,7 @@ paths:
                         - "can't be blank"
       security:
         - Bearer authorization: []
-      description: Creates new activity
+      description: ''
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -153,7 +153,7 @@ paths:
                 - description
         description: Use http uploaded file for cover attribute.
     get:
-      summary: ''
+      summary: List activities
       operationId: get-activities
       responses:
         '200':
@@ -172,7 +172,7 @@ paths:
                       description: Testing
                       id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
                       name: Test
-      description: List activities
+      description: ''
     parameters: []
   '/activities/{activity_id}/participations':
     post:
