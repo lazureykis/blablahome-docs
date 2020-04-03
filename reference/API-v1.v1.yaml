@@ -363,6 +363,84 @@ paths:
                   photo: 'https://storage.googleapis.com/blablahome/uploads/checkins/photos/e4e004eb-646b-4fd9-96d1-d3f020b4868c/0.jpeg?v=63753151161'
                   progress: 1
         description: ''
+  /checkins:
+    get:
+      summary: Get last check-ins
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Checkin'
+              examples:
+                example-1:
+                  value:
+                    - id: b9f45fb3-a1a0-4167-b292-5b0d6e2985fa
+                      likes: 0
+                      message: hello
+                      participation:
+                        id: 36f8cd13-92c5-451b-ae8e-292cec76edc8
+                        progress: 0
+                        completed_at: null
+                        user:
+                          id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                          name: Pavel Lazureykis
+                          joins_count: 1
+                          completions_count: 4
+                          fails_count: 0
+                        activity:
+                          completions_count: 0
+                          cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
+                          days: 7
+                          description: Testing
+                          fails_count: 0
+                          id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
+                          name: Test
+                          participants_count: 2
+                          user:
+                            id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                            name: Pavel Lazureykis
+                            joins_count: 1
+                            completions_count: 4
+                            fails_count: 0
+                      photo: 'https://storage.googleapis.com/blablahome/uploads/checkins/photos/b9f45fb3-a1a0-4167-b292-5b0d6e2985fa/0.jpeg?v=63753146078'
+                      progress: 2
+                    - id: 85543b1e-defe-406f-b26c-85b69d6ceb0a
+                      likes: 0
+                      message: hello
+                      participation:
+                        id: 36f8cd13-92c5-451b-ae8e-292cec76edc8
+                        progress: 0
+                        completed_at: null
+                        user:
+                          id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                          name: Pavel Lazureykis
+                          joins_count: 1
+                          completions_count: 4
+                          fails_count: 0
+                        activity:
+                          completions_count: 0
+                          cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
+                          days: 7
+                          description: Testing
+                          fails_count: 0
+                          id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
+                          name: Test
+                          participants_count: 2
+                          user:
+                            id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                            name: Pavel Lazureykis
+                            joins_count: 1
+                            completions_count: 4
+                            fails_count: 0
+                      photo: 'https://storage.googleapis.com/blablahome/uploads/checkins/photos/85543b1e-defe-406f-b26c-85b69d6ceb0a/0.jpeg?v=63753145943'
+                      progress: 1
+      operationId: get-checkins
+      description: ''
 components:
   schemas:
     User:
