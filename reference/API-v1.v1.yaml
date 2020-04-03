@@ -397,6 +397,33 @@ components:
             description: Testing
             id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
             name: Test
+    Checkin:
+      title: Checkin
+      type: object
+      description: Check-in object
+      properties:
+        id:
+          type: string
+        message:
+          type: string
+        photo:
+          type: string
+          description: URL
+        progress:
+          type: integer
+          minimum: 0
+          maximum: 7
+        likes:
+          type: integer
+          minimum: 0
+        participation:
+          $ref: '#/components/schemas/Participation'
+      required:
+        - id
+        - photo
+        - progress
+        - likes
+        - participation
   securitySchemes:
     Bearer authorization:
       name: Authorization
