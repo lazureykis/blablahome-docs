@@ -100,6 +100,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Activity'
+              examples:
+                example-1:
+                  value:
+                    cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
+                    days: 7
+                    description: Testing
+                    id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
+                    name: Test
+                    user:
+                      id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                      name: Pavel Lazureykis
         '401':
           description: Unauthorized
           content:
@@ -148,9 +159,16 @@ paths:
                   type: string
                 cover:
                   type: string
+                days:
+                  type: number
+                  minimum: 1
+                  maximum: 7
               required:
                 - name
                 - description
+                - days
+            examples:
+              example-1: {}
         description: Use http uploaded file for cover attribute.
     get:
       summary: List activities
@@ -172,6 +190,9 @@ paths:
                       description: Testing
                       id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
                       name: Test
+                      user:
+                        id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                        name: Pavel Lazureykis
       description: ''
     parameters: []
   '/activities/{activity_id}/participations':
@@ -259,11 +280,14 @@ components:
       type: object
       x-examples:
         example:
-          id: '12357'
-          name: Do something
-          description: Multiline description
-          cover: 'https://cover.image/url.jpg'
+          cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
           days: 7
+          description: Testing
+          id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
+          name: Test
+          user:
+            id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+            name: Pavel Lazureykis
       description: 'Type of activity - 100 pushups, read a book, etc.'
       properties:
         id:
@@ -280,6 +304,8 @@ components:
           example: '2'
           minimum: 1
           maximum: 7
+        user:
+          $ref: '#/components/schemas/User'
     Participation:
       title: Participation
       type: object
