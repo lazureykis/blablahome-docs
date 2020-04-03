@@ -245,6 +245,7 @@ components:
           type: string
         name:
           type: string
+      description: Authorized user
     Activity:
       title: Activity
       type: object
@@ -255,7 +256,7 @@ components:
           description: Multiline description
           cover: 'https://cover.image/url.jpg'
           days: 7
-      description: ''
+      description: 'Type of activity - 100 pushups, read a book, etc.'
       properties:
         id:
           type: string
