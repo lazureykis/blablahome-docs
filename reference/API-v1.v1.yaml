@@ -232,7 +232,7 @@ paths:
         name: activity_id
         in: path
         required: true
-  /participations:
+  '/users/{user_id}/participations':
     get:
       summary: Participations
       tags: []
@@ -260,10 +260,19 @@ paths:
                         description: Testing
                         id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
                         name: Test
+                        user:
+                          id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                          name: Pavel Lazureykis
       operationId: get-participations
       security:
         - Bearer authorization: []
       description: "List currrent user's active participations."
+    parameters:
+      - schema:
+          type: string
+        name: user_id
+        in: path
+        required: true
 components:
   schemas:
     User:
