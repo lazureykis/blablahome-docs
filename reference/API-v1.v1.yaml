@@ -166,6 +166,43 @@ paths:
                   $ref: '#/components/schemas/Activity'
       description: List activities
     parameters: []
+  '/activities/{activity_id}/participations':
+    post:
+      summary: Participations
+      operationId: 'post-activities-:id-participations'
+      responses:
+        '201':
+          description: Created
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                example-1:
+                  value:
+                    id: c59c229e-3a53-462c-b4e2-2d41c07f59b3
+                    progress: 0
+                    completed_at: null
+                    user:
+                      id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+                      name: Pavel Lazureykis
+                    activity:
+                      cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
+                      days: 7
+                      description: Testing
+                      id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
+                      name: Test
+      description: Create participation. User joins the activity.
+      security:
+        - Bearer authorization: []
+    parameters:
+      - schema:
+          type: string
+        name: activity_id
+        in: path
+        required: true
 components:
   schemas:
     User:
@@ -196,6 +233,48 @@ components:
         cover:
           type: string
       description: ''
+    Participation:
+      title: Participation
+      type: object
+      description: "User's participation in Activity"
+      properties:
+        id:
+          type: string
+        progress:
+          type: integer
+          example: '2'
+          minimum: 0
+          maximum: 7
+        completed_at:
+          type:
+            - string
+            - 'null'
+          format: date-time
+          example: '2020-04-03T11:23:15'
+        user:
+          $ref: '#/components/schemas/User'
+        activity:
+          $ref: '#/components/schemas/Activity'
+      required:
+        - id
+        - progress
+        - completed_at
+        - user
+        - activity
+      x-examples:
+        example-1:
+          id: d77f0583-82f0-4565-9e99-70864d3cb9ab
+          progress: 0
+          completed_at: '2020-04-03T11:23:15'
+          user:
+            id: 0ac2009f-584b-4462-906a-4d1028d32e5f
+            name: Pavel Lazureykis
+          activity:
+            cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
+            days: 7
+            description: Testing
+            id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
+            name: Test
   securitySchemes:
     Bearer authorization:
       name: Authorization
