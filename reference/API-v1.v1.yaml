@@ -255,6 +255,7 @@ components:
           description: Multiline description
           cover: 'https://cover.image/url.jpg'
           days: 7
+      description: ''
       properties:
         id:
           type: string
@@ -264,7 +265,12 @@ components:
           type: string
         cover:
           type: string
-      description: ''
+        days:
+          type: integer
+          format: int32
+          example: '2'
+          minimum: 1
+          maximum: 7
     Participation:
       title: Participation
       type: object
