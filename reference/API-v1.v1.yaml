@@ -89,17 +89,17 @@ paths:
                 access_token:
                   type: string
       description: User registration
-  /ideas:
+  /activities:
     post:
       summary: Ideas
-      operationId: post-ideas
+      operationId: post-activities
       responses:
         '201':
           description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Idea'
+                $ref: '#/components/schemas/Activity'
         '401':
           description: Unauthorized
           content:
@@ -135,7 +135,7 @@ paths:
                         - "can't be blank"
       security:
         - Bearer authorization: []
-      description: Creates new idea
+      description: Creates new activity
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -154,7 +154,7 @@ paths:
         description: Use http uploaded file for cover attribute.
     get:
       summary: ''
-      operationId: get-ideas
+      operationId: get-activities
       responses:
         '200':
           description: OK
@@ -163,8 +163,9 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Idea'
-      description: List ideas
+                  $ref: '#/components/schemas/Activity'
+      description: List activities
+    parameters: []
 components:
   schemas:
     User:
@@ -175,8 +176,8 @@ components:
           type: string
         name:
           type: string
-    Idea:
-      title: Idea
+    Activity:
+      title: Activity
       type: object
       x-examples:
         example:
@@ -184,6 +185,7 @@ components:
           name: Do something
           description: Multiline description
           cover: 'https://cover.image/url.jpg'
+          days: 7
       properties:
         id:
           type: string
