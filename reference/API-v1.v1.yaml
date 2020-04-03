@@ -164,6 +164,14 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Activity'
+              examples:
+                example-1:
+                  value:
+                    - cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
+                      days: 7
+                      description: Testing
+                      id: 62bed2d2-1ce4-49c0-a068-031d69aa1117
+                      name: Test
       description: List activities
     parameters: []
   '/activities/{activity_id}/participations':
