@@ -59,6 +59,7 @@ paths:
                     user:
                       id: '82317456129'
                       name: Ivan
+                      picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
         '422':
           description: Unprocessable Entity
           content:
@@ -88,6 +89,8 @@ paths:
               properties:
                 access_token:
                   type: string
+            examples:
+              example-1: {}
       description: User registration
   /activities:
     post:
@@ -111,6 +114,7 @@ paths:
                     user:
                       id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                       name: Pavel Lazureykis
+                      picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
         '401':
           description: Unauthorized
           content:
@@ -193,6 +197,7 @@ paths:
                       user:
                         id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                         name: Pavel Lazureykis
+                        picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
       description: ''
     parameters: []
   '/activities/{activity_id}/participations':
@@ -217,6 +222,7 @@ paths:
                     user:
                       id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                       name: Pavel Lazureykis
+                      picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
                     activity:
                       cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
                       days: 7
@@ -253,6 +259,7 @@ paths:
                       user:
                         id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                         name: Pavel Lazureykis
+                        picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
                       activity:
                         cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
                         days: 7
@@ -262,6 +269,7 @@ paths:
                         user:
                           id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                           name: Pavel Lazureykis
+                          picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
       description: ''
   '/users/{user_id}/participations':
     get:
@@ -285,6 +293,7 @@ paths:
                       user:
                         id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                         name: Pavel Lazureykis
+                        picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
                       activity:
                         cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/62bed2d2-1ce4-49c0-a068-031d69aa1117/0.jpeg?v=63753130513'
                         days: 7
@@ -294,6 +303,7 @@ paths:
                         user:
                           id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                           name: Pavel Lazureykis
+                          picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
       operationId: get-participations
       security:
         - Bearer authorization: []
@@ -348,6 +358,7 @@ paths:
                     user:
                       id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                       name: Pavel Lazureykis
+                      picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
                     activity:
                       completions_count: 0
                       cover: 'https://storage.googleapis.com/blablahome/uploads/activities/covers/31b75050-4308-4084-930f-e55ed78198e1/0.jpeg?v=63753151111'
@@ -360,6 +371,7 @@ paths:
                       user:
                         id: 0ac2009f-584b-4462-906a-4d1028d32e5f
                         name: Pavel Lazureykis
+                        picture_url: 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=10221848305782264&height=50&width=50&ext=1588687492&hash=AeSj5OUCPVDTbfM-'
                   photo: 'https://storage.googleapis.com/blablahome/uploads/checkins/photos/e4e004eb-646b-4fd9-96d1-d3f020b4868c/0.jpeg?v=63753151161'
                   progress: 1
         description: ''
