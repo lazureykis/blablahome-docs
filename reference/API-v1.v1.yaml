@@ -447,6 +447,8 @@ components:
       title: User
       type: object
       description: Authorized user
+      x-examples:
+        example-1: {}
       properties:
         id:
           type: string
@@ -458,8 +460,8 @@ components:
           type: integer
         fails_count:
           type: integer
-      x-examples:
-        example-1: {}
+        picture_url:
+          type: string
     Activity:
       title: Activity
       type: object
