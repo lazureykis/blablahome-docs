@@ -472,8 +472,16 @@ components:
           type: integer
         fails_count:
           type: integer
-        picture_url:
+        user_id:
           type: string
+          description: Facebook user id
+      required:
+        - id
+        - name
+        - joins_count
+        - completions_count
+        - fails_count
+        - user_id
     Activity:
       title: Activity
       type: object
