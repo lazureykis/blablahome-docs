@@ -453,6 +453,24 @@ paths:
                       progress: 1
       operationId: get-checkins
       description: ''
+  '/checkins/{id}/like':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: Check-in ID
+    post:
+      summary: Give a like to check-in
+      operationId: post-checkins-id-like
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Checkin'
 components:
   schemas:
     User:
