@@ -603,12 +603,16 @@ components:
           minimum: 0
         participation:
           $ref: '#/components/schemas/Participation'
+        inserted_at:
+          type: string
+          format: date-time
       required:
         - id
         - photo
         - progress
         - likes
         - participation
+        - inserted_at
   securitySchemes:
     Bearer authorization:
       name: Authorization
