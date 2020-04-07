@@ -471,6 +471,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Checkin'
+  '/participations/{participaion_id}/checkins':
+    parameters:
+      - schema:
+          type: string
+        name: participaion_id
+        in: path
+        required: true
+    get:
+      summary: List check-ins by participation
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Checkin'
+      operationId: get-participations-participaion_id-checkins
 components:
   schemas:
     User:
